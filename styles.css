@@ -1,0 +1,144 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --panel-2: #273449;
+  --key: #334155;
+  --key-hover: #3f4d63;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --danger: #f87171;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #1e293b, var(--bg) 60%);
+  color: var(--text);
+}
+
+.calculator {
+  width: min(380px, 100%);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.display {
+  background: var(--panel-2);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.history {
+  font-size: 0.95rem;
+  color: var(--muted);
+  min-height: 1.2em;
+  word-break: break-all;
+  text-align: right;
+}
+
+.history.error {
+  color: var(--danger);
+}
+
+.current {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  word-break: break-all;
+  text-align: right;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--key);
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease;
+  user-select: none;
+}
+
+.key:hover {
+  background: var(--key-hover);
+}
+
+.key:active {
+  transform: translateY(1px);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.key--fn {
+  background: #3b4a60;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.key--op {
+  color: var(--accent);
+}
+
+.key--equals {
+  grid-column: span 3;
+  background: var(--accent-strong);
+  color: #05202f;
+  font-weight: 700;
+}
+
+.key--equals:hover {
+  background: var(--accent);
+}
+
+.hint {
+  max-width: 380px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+kbd {
+  background: var(--panel-2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An interactive calculator built with vanilla JavaScript, HTML, and CSS."
+    />
+    <title>Calculator</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A7%AE</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="calculator" aria-label="Calculator">
+      <section class="display">
+        <div class="history" id="history" aria-live="polite"></div>
+        <output class="current" id="current" aria-live="polite">0</output>
+      </section>
+
+      <section class="keys" id="keys">
+        <button class="key key--fn" data-key="C" aria-label="Clear">C</button>
+        <button class="key key--fn" data-key="(" aria-label="Open parenthesis">(</button>
+        <button class="key key--fn" data-key=")" aria-label="Close parenthesis">)</button>
+        <button class="key key--fn" data-key="back" aria-label="Backspace">&#9003;</button>
+
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key key--op" data-key="/" aria-label="Divide">&divide;</button>
+
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key key--op" data-key="*" aria-label="Multiply">&times;</button>
+
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key key--op" data-key="-" aria-label="Subtract">&minus;</button>
+
+        <button class="key" data-key="neg" aria-label="Toggle sign">&plusmn;</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key" data-key=".">.</button>
+        <button class="key key--op" data-key="+" aria-label="Add">+</button>
+
+        <button class="key key--op" data-key="%" aria-label="Modulo">%</button>
+        <button class="key key--equals" data-key="=" aria-label="Equals">=</button>
+      </section>
+    </main>
+
+    <p class="hint">
+      Tip: you can also use your keyboard &mdash; numbers, <kbd>+</kbd>
+      <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> <kbd>%</kbd>, <kbd>Enter</kbd> to
+      evaluate, <kbd>Backspace</kbd> to delete, and <kbd>Esc</kbd> to clear.
+    </p>
+
+    <script type="module" src="src/ui.js"></script>
+  </body>
+</html>
